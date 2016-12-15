@@ -14,7 +14,7 @@ abstract class Movie
      * Movie constructor.
      * @param $title
      */
-    public function __construct($title)
+    public function __construct(string $title)
     {
         $this->title = $title;
     }
@@ -28,7 +28,17 @@ abstract class Movie
         return $this->title;
     }
 
-    abstract public function determineAmount($daysRented) : float;
+    /**
+     * TODO comment this
+     * @param int $daysRented
+     * @return float
+     */
+    abstract public function determineAmount(int $daysRented) : float;
 
-    abstract public function determineFrequentRenterPoints($daysRented) : int;
+    /**
+     * TODO comment this
+     * @param int $daysRented
+     * @return int
+     */
+    abstract public function determineFrequentRenterPoints(int $daysRented) : int;
 }

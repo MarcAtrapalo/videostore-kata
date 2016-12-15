@@ -11,7 +11,7 @@ class NewReleaseMovie extends Movie
      * NewReleaseMovie constructor.
      * @param $title
      */
-    public function __construct($title)
+    public function __construct(string $title)
     {
         parent::__construct($title);
     }
@@ -20,7 +20,7 @@ class NewReleaseMovie extends Movie
      * @param $daysRented
      * @return float
      */
-    public function determineAmount($daysRented) : float
+    public function determineAmount(int $daysRented) : float
     {
         return $daysRented * 3.0;
     }
@@ -29,7 +29,7 @@ class NewReleaseMovie extends Movie
      * @param $daysRented
      * @return int
      */
-    public function determineFrequentRenterPoints($daysRented) : int
+    public function determineFrequentRenterPoints(int $daysRented) : int
     {
         return ($daysRented > 1) ? 2 : 1;
     }

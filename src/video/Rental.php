@@ -18,7 +18,7 @@ class Rental
      * @param Movie $movie
      * @param int $daysRented
      */
-    public function __construct($movie, $daysRented)
+    public function __construct(Movie $movie, int $daysRented)
     {
         $this->movie = $movie;
         $this->daysRented = $daysRented;
@@ -42,7 +42,11 @@ class Rental
         return $this->movie->determineAmount($this->daysRented);
     }
 
-    public function determineFrequentRenterPoints()
+    /**
+     * TODO comment this
+     * @return int
+     */
+    public function determineFrequentRenterPoints() : int
     {
         return $this->movie->determineFrequentRenterPoints($this->daysRented);
     }

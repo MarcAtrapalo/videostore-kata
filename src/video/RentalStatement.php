@@ -20,7 +20,7 @@ class RentalStatement
      * RentalStatement constructor.
      * @param $customerName
      */
-    public function __construct($customerName)
+    public function __construct(string $customerName)
     {
         $this->name = $customerName;
     }
@@ -28,7 +28,7 @@ class RentalStatement
     /**
      * @param Rental $rental
      */
-    public function addRental($rental)
+    public function addRental(Rental $rental)
     {
         $this->rentals[] = $rental;
     }
@@ -36,7 +36,7 @@ class RentalStatement
     /**
      * @return string
      */
-    public function makeRentalStatement()
+    public function makeRentalStatement() : string
     {
         $this->clearTotals();
 
@@ -78,7 +78,7 @@ class RentalStatement
      * @param Rental $rental
      * @return string
      */
-    private function makeRentalLine($rental) : string
+    private function makeRentalLine(Rental $rental) : string
     {
         /** @var float $thisAmount */
         $thisAmount = $rental->determineAmount();
@@ -94,7 +94,7 @@ class RentalStatement
      * @param float $thisAmount
      * @return string
      */
-    private function formatRentalLine($rental, $thisAmount) : string
+    private function formatRentalLine(Rental $rental, float $thisAmount) : string
     {
         return "\t" . $rental->title() . "\t" . $thisAmount . "\n";
     }

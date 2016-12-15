@@ -17,7 +17,7 @@ class Customer
      * Customer constructor.
      * @param $name
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
@@ -32,9 +32,10 @@ class Customer
     }
 
     /**
+     * TODO OMG this function. Split it, reduce cyclomatic complexity
      * @return string
      */
-    public function statement()
+    public function statement() : string
     {
         /** @var float $totalAmount */
         $totalAmount = 0;
