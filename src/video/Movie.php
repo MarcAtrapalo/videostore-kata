@@ -23,7 +23,7 @@ abstract class Movie
      * Title accessor.
      * @return string
      */
-    public function title() : string
+    public function getTitle() : string
     {
         return $this->title;
     }

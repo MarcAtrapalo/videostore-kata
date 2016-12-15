@@ -26,23 +26,23 @@ class Customer
      * Name accessor.
      * @return string
      */
-    public function name() : string
+    public function getName() : string
     {
         return $this->name;
     }
 
     /**
-     * TODO OMG this function. Split it, reduce cyclomatic complexity
+     * TODO OMG this function. Split it, reduce cyclomatic complexity. Declare constants. Implement missing methods.
      * @return string
      */
-    public function statement() : string
+    public function getStatement() : string
     {
         /** @var float $totalAmount */
         $totalAmount = 0;
         /** @var int $frequentRenterPoints */
         $frequentRenterPoints = 0;
         /** @var string $result */
-        $result = "Rental Record for " . $this->name() . "\n";
+        $result = "Rental Record for " . $this->getName() . "\n";
 
         /** @var Rental $rental */
         foreach ($this->rentals as $rental) {

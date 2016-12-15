@@ -57,7 +57,7 @@ class RentalStatement
      */
     private function makeHeader() : string
     {
-        return "Rental Record for " . $this->name() . "\n";
+        return "Rental Record for " . $this->getName() . "\n";
     }
 
     /**
@@ -81,7 +81,7 @@ class RentalStatement
     private function makeRentalLine(Rental $rental) : string
     {
         /** @var float $thisAmount */
-        $thisAmount = $rental->determineAmount();
+        $thisAmount = $rental->determineMovieAmount();
 
         $this->frequentRenterPoints += $rental->determineFrequentRenterPoints();
         $this->totalAmount += $thisAmount;
@@ -96,7 +96,7 @@ class RentalStatement
      */
     private function formatRentalLine(Rental $rental, float $thisAmount) : string
     {
-        return "\t" . $rental->title() . "\t" . $thisAmount . "\n";
+        return "\t" . $rental->getMovieTitle() . "\t" . $thisAmount . "\n";
     }
 
     /**
@@ -111,7 +111,7 @@ class RentalStatement
      * Name accessor.
      * @return string
      */
-    public function name() : string
+    public function getName() : string
     {
         return $this->name;
     }
@@ -120,7 +120,7 @@ class RentalStatement
      * Amount owed accessor.
      * @return float
      */
-    public function amountOwed() : float
+    public function getTotalAmount() : float
     {
         return $this->totalAmount;
     }
@@ -129,7 +129,7 @@ class RentalStatement
      * Frequent renter points accessor.
      * @return int
      */
-    public function frequentRenterPoints() : int
+    public function getFrequentRenterPoints() : int
     {
         return $this->frequentRenterPoints;
     }

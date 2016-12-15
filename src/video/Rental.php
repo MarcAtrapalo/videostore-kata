@@ -28,16 +28,16 @@ class Rental
      * Movie's title accessor.
      * @return string
      */
-    public function title() : string
+    public function getMovieTitle() : string
     {
-        return $this->movie->title();
+        return $this->movie->getTitle();
     }
 
     /**
      * Movie's amount accessor.
      * @return float
      */
-    public function determineAmount() : float
+    public function determineMovieAmount() : float
     {
         return $this->movie->determineAmount($this->daysRented);
     }
