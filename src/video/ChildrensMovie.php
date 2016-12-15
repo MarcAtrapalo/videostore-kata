@@ -7,6 +7,10 @@ namespace video;
  */
 class ChildrensMovie extends Movie
 {
+    const BASE_AMOUNT = 1.5;
+    const MINIMUM_DAYS = 3;
+    const AMOUNT_EXTRA_INCREMENT = 1.5;
+
     /**
      * ChildrensMovie constructor.
      * @param $title
@@ -14,21 +18,6 @@ class ChildrensMovie extends Movie
     public function __construct(string $title)
     {
         parent::__construct($title);
-    }
-
-    /**
-     * @param $daysRented
-     * @return float
-     */
-    public function determineAmount(int $daysRented) : float
-    {
-        $thisAmount = 1.5;
-
-        if ($daysRented > 3) {
-            $thisAmount += ($daysRented - 3) * 1.5;
-        }
-
-        return $thisAmount;
     }
 
     /**

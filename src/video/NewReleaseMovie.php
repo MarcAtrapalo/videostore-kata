@@ -7,6 +7,10 @@ namespace video;
  */
 class NewReleaseMovie extends Movie
 {
+    const BASE_AMOUNT = 0;
+    const MINIMUM_DAYS = 0;
+    const AMOUNT_EXTRA_INCREMENT = 3.0;
+
     /**
      * NewReleaseMovie constructor.
      * @param $title
@@ -14,15 +18,6 @@ class NewReleaseMovie extends Movie
     public function __construct(string $title)
     {
         parent::__construct($title);
-    }
-
-    /**
-     * @param $daysRented
-     * @return float
-     */
-    public function determineAmount(int $daysRented) : float
-    {
-        return $daysRented * 3.0;
     }
 
     /**
